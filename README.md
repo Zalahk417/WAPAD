@@ -1,20 +1,21 @@
-# WAPA — WA Precious Asset Desk
+# WAPAD — WA Precious Asset Desk
 
-Public website for **WA Precious Asset Desk (WAPA)**.
+Public website for **WA Precious Asset Desk (WAPAD)**.
 
 ## Direction
 
 - Premium precious-asset desk rather than pawn-shop styling.
-- Gold, jewellery, watches and gemstones.
+- Gold, jewellery, watches, bullion, gemstones and estate parcels.
 - Evidence-led method: identify → verify → value → route.
 - Value is separated into intrinsic, market, collectable and utility layers.
 - Compliance language is deliberately careful while the operating model is being established.
+- Current public-facing state remains controlled pre-launch until licensing, verified trade-measurement equipment, security and intake procedures are completed.
 
 ## GitHub Pages
 
 Deployment is handled by **GitHub Actions** using `.github/workflows/pages.yml`.
 
-Production URL: `https://zalahk417.github.io/WAPAD/`
+Production preview URL: `https://zalahk417.github.io/WAPAD/`
 
 Any push to `main` triggers a fresh static-site deployment.
 
@@ -26,4 +27,4 @@ Any push to `main` triggers a fresh static-site deployment.
 
 ## Images
 
-Images are loaded from Wikimedia Commons sources selected for the WAPA free-image library. Each gallery image links back to its Commons file record. Licence and attribution requirements remain with the individual source record.
+Images are loaded from Wikimedia Commons sources selected for the WAPAD free-image library. Each gallery image links back to its Commons file record. Licence and attribution requirements remain with the individual source record.
