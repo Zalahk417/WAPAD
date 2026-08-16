@@ -1,6 +1,6 @@
 # WAPA — WA Precious Asset Desk
 
-First-draft public website for **WA Precious Asset Desk (WAPA)**.
+Public website for **WA Precious Asset Desk (WAPA)**.
 
 ## Direction
 
@@ -12,9 +12,11 @@ First-draft public website for **WA Precious Asset Desk (WAPA)**.
 
 ## GitHub Pages
 
-This repository is designed to publish directly from `main` at repository root (`/`).
+Deployment is handled by **GitHub Actions** using `.github/workflows/pages.yml`.
 
-In GitHub: **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root)**.
+Production URL: `https://zalahk417.github.io/WAPAD/`
+
+Any push to `main` triggers a fresh static-site deployment.
 
 ## Primary references
 
