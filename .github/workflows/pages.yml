@@ -25,7 +25,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare WAPAD build
-        run: perl -pi -e 's/\bWAPA\b/WAPAD/g' index.html assets/site.js
+        run: |
+          perl -pi -e 's/\bWAPA\b/WAPAD/g' index.html assets/site.js
+          perl -pi -e 's/Bank transfer, not advertised cash/Bank transfer-only settlement/g' index.html
+          perl -pi -e 's/no advertised cash holdings, bank transfer, tamper-evident custody/no cash or virtual-asset settlement, bank transfer only, tamper-evident custody/g' index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
