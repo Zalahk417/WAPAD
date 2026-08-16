@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare WAPAD build
+        run: perl -pi -e 's/\bWAPA\b/WAPAD/g' index.html assets/site.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
