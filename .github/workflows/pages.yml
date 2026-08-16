@@ -1,4 +1,4 @@
-name: Deploy WAPA to GitHub Pages
+name: Deploy WAPAD to GitHub Pages
 
 on:
   push:
