@@ -1,6 +1,6 @@
-# WAPAD — WA Precious Asset Desk
+# WAPAD — Precious Asset Decision Desk
 
-Production website and controlled-pilot web application for **WA Precious Asset Desk (WAPAD)**.
+Production website and controlled-pilot application for **WAPAD**, founded in Western Australia and redesigned as a location-light precious-asset decision desk.
 
 ## Current deployment
 
@@ -12,35 +12,39 @@ Production website and controlled-pilot web application for **WA Precious Asset 
 
 Any push to `main` triggers a Cloudflare deployment.
 
-## WAPAD v2
+## WAPAD v3 strategy
 
-The v2 web product includes:
+WAPAD is no longer positioned as an uncredentialled buyer/valuer. The core product is **decision intelligence before transaction**: capture evidence, compare likely routes, keep uncertainty visible and escalate to the right credentialled specialist only when value-at-risk justifies it.
 
-- Premium responsive public desk experience
-- Asset-specific pathways for jewellery, watches, bullion, gemstones and estate parcels
-- Evidence-led method and route explanation
-- Browser-local private pre-assessment wizard
-- Local draft save / resume
-- Local photo preview (photos are not uploaded)
-- Preparation-route logic
-- Printable / copyable assessment brief
-- Searchable knowledge desk
-- Offline-capable core pages through a small service worker
-- Conservative controlled-pilot readiness status
+The commercial model is designed to be asset-light and portable:
+
+- Free browser-local Route Check as the lead and qualification layer
+- Planned paid Decision Brief for market-route research, evidence gaps and next-step logic
+- Planned remote Estate Triage for mixed collections
+- Planned B2B Partner Desk for white-label intake and case qualification
+- Specialist/valuer/auction/buyer network used selectively rather than pretending WAPAD can personally authenticate every category
+
+The long-term moat is the workflow, case/outcome data, routing rules, specialist network and trust architecture — not inventory ownership or dependence on one AI model.
+
+## Product experience
+
+The current v3 front end includes:
+
+- Scroll-triggered reveals, staggered service cards, parallax elements and animated route flow
+- Interactive route examples for estates, watches, jewellery and bullion
+- Location-independent operating-model visualisation
+- Browser-local six-step Route Check with local photo previews
+- Local draft save/resume and printable/copyable evidence brief
+- Searchable Knowledge Desk
+- Offline-capable core pages
+- Conservative controlled-pilot boundaries throughout
 
 ## Deliberate launch boundary
 
-The website must not imply that WAPAD is already providing regulated or custody services before the required operating controls are complete.
+The website must not imply that WAPAD is already providing regulated, formal valuation, authentication, custody or transaction services before the required controls and partners are in place.
 
-The current pre-assessment is **information and preparation only**. It does not:
+The current Route Check is **information and preparation only**. It does not authenticate an item, perform trade measurement, create a formal valuation, calculate a purchase offer, upload customer evidence, create a transaction, accept custody or take payment.
 
-- authenticate an item
-- perform a trade measurement
-- calculate a live valuation or purchase offer
-- create a transaction
-- upload evidence to WAPAD
-- accept custody or payment
-
-Secure intake, production email, appointment booking, D1/R2-backed cases, authentication, payments and admin workflows are backend launch steps and should only be enabled after the associated privacy, licensing, custody, security and operational controls are approved.
+Secure intake, production email, backend case storage, payments, partner workflows and any regulated dealing remain later launch steps and must only be enabled after the associated privacy, licensing, custody, security and operational controls are approved.
 
 See `LAUNCH_CHECKLIST.md` for the operating gate.
