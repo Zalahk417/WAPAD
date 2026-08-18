@@ -1,6 +1,8 @@
 {
   "name": "wapad",
   "compatibility_date": "2026-08-18",
+  "workers_dev": true,
+  "preview_urls": true,
   "assets": {
     "directory": "./",
     "not_found_handling": "404-page",
