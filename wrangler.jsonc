@@ -13,6 +13,11 @@
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*",
+      "/knowledge.html",
+      "/knowledge/*"
+    ],
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
     "exclude": [
