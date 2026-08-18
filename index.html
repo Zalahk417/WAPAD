@@ -4,24 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#080806">
-  <meta name="description" content="WAPAD is a precious-asset decision desk: identify the evidence, compare the routes and escalate to the right specialist before you sell, scrap, insure or divide an asset.">
+  <meta name="description" content="WAPAD helps people with gold, jewellery, watches, bullion, gemstones and estate pieces work out the right next step before they sell, scrap, insure or divide an asset.">
   <meta name="robots" content="noindex,nofollow">
   <meta property="og:title" content="WAPAD — Precious Asset Decision Desk">
-  <meta property="og:description" content="Don't start with a buyer. Start with the decision.">
+  <meta property="og:description" content="Before you sell it, scrap it, insure it or divide it — work out which path deserves a closer look.">
   <meta property="og:type" content="website">
   <title>WAPAD — Precious Asset Decision Desk</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="assets/v2.css">
   <link rel="stylesheet" href="assets/v3.css">
+  <link rel="stylesheet" href="assets/customer.css">
 </head>
-<body class="page-v3">
+<body class="page-v3 page-customer" data-floating-actions>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="statusbar">
     <div class="shell statusbar__inner">
       <span class="statusbar__state"><i></i> Controlled digital pilot</span>
-      <span>Founded in Western Australia · built to travel</span>
-      <span class="statusbar__desktop">No custody · no buyer pressure · route before transaction</span>
+      <span>Founded in Western Australia</span>
+      <span class="statusbar__desktop">Keep the asset · compare the routes · choose the next step</span>
     </div>
   </div>
 
@@ -33,204 +34,234 @@
       </a>
       <button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" data-menu-btn><span></span><span></span></button>
       <nav class="main-nav" data-menu aria-label="Primary navigation">
-        <a href="#problem">The problem</a>
-        <a href="#desk">The desk</a>
-        <a href="#model">Model</a>
-        <a href="#trust">Trust</a>
+        <a href="#assets">What do you have?</a>
+        <a href="#how">How it works</a>
+        <a href="#services">Services</a>
+        <a href="#trust">Why WAPAD</a>
         <a href="knowledge.html">Knowledge</a>
-        <a class="nav-cta" href="assessment.html">Run route check <span>↗</span></a>
+        <a class="nav-cta" href="assessment.html">Run free Route Check <span>↗</span></a>
       </nav>
     </div>
   </header>
 
+  <div class="floating-actions" aria-label="Quick actions">
+    <a class="floating-action floating-action--primary" href="assessment.html"><span class="floating-action__icon">↗</span><span><strong>Run a Route Check</strong><small>Free · 2–5 min</small></span></a>
+    <button class="floating-action floating-action--chat" type="button" data-chat-open aria-controls="wapad-chat" aria-expanded="false"><span class="floating-action__icon">◌</span><span><strong>Ask WAPAD</strong><small>Quick questions</small></span></button>
+  </div>
+
+  <aside class="wapad-chat" id="wapad-chat" aria-label="Ask WAPAD quick answers" aria-hidden="true" data-chat-panel>
+    <div class="wapad-chat__top">
+      <div><small>WAPAD / QUICK ANSWERS</small><strong>What can I help with?</strong></div>
+      <button type="button" aria-label="Close Ask WAPAD" data-chat-close>×</button>
+    </div>
+    <div class="wapad-chat__notice">Pilot assistant · runs in your browser · not a valuation or live human chat.</div>
+    <div class="wapad-chat__messages" data-chat-messages aria-live="polite">
+      <div class="chat-msg chat-msg--bot">Hi. I can answer simple questions about what WAPAD helps with, location, watches, gold, estates, pricing and the Route Check.</div>
+    </div>
+    <div class="wapad-chat__chips" aria-label="Suggested questions">
+      <button type="button" data-chat-chip="Do you help outside WA?">Outside WA?</button>
+      <button type="button" data-chat-chip="Do you look at watches?">Watches?</button>
+      <button type="button" data-chat-chip="Do you buy gold?">Do you buy?</button>
+      <button type="button" data-chat-chip="How much does it cost?">Pricing?</button>
+    </div>
+    <form class="wapad-chat__form" data-chat-form>
+      <label for="wapad-chat-input" class="sr-only">Ask WAPAD</label>
+      <input id="wapad-chat-input" type="text" autocomplete="off" maxlength="220" placeholder="Type a quick question…" data-chat-input>
+      <button type="submit">Send</button>
+    </form>
+  </aside>
+
   <main id="main">
-    <section class="v3-hero" data-scene="hero">
+    <section class="v3-hero customer-hero" data-scene="hero">
       <div class="v3-gridwash" aria-hidden="true"></div>
       <div class="v3-orbit" aria-hidden="true" data-parallax="0.08"><i></i><i></i><i></i></div>
       <div class="shell v3-hero__grid">
         <div class="v3-hero__copy" data-reveal>
-          <div class="v3-kicker"><span>PRECIOUS-ASSET DECISION INTELLIGENCE</span><span>01 / ROUTE</span></div>
-          <h1>Don't start with<br><em>a buyer.</em><br>Start with the decision.</h1>
-          <p class="v3-hero__lead">WAPAD helps you work out what evidence matters, which market should see the asset next, and when a qualified specialist is actually worth paying for — before a sale route has an incentive to steer the answer.</p>
+          <div class="v3-kicker"><span>PRECIOUS-ASSET DECISION SUPPORT</span><span>START HERE</span></div>
+          <h1>Before you sell it,<br><em>work out what path it belongs on.</em></h1>
+          <p class="v3-hero__lead">Gold, jewellery, watches, bullion, gemstones and estate pieces can sit in very different markets. WAPAD helps you organise the evidence, compare the likely routes and decide what deserves a closer look before anything irreversible happens.</p>
           <div class="v3-hero__actions">
             <a class="button button--gold" href="assessment.html">Run the free Route Check <span>↗</span></a>
-            <a class="button button--ghost" href="#desk">See the new desk <span>↓</span></a>
+            <a class="button button--ghost" href="#assets">Show me where to start <span>↓</span></a>
           </div>
-          <div class="v3-positioning">
-            <span><b>NOT</b> a pawn shop</span>
-            <span><b>NOT</b> a formal valuation</span>
-            <span><b>NOT</b> an instant buyer</span>
+          <div class="v3-positioning customer-signals">
+            <span><b>KEEP</b> possession</span>
+            <span><b>SEE</b> what is uncertain</span>
+            <span><b>ESCALATE</b> only when useful</span>
           </div>
-          <p class="legal-note">Controlled pilot. WAPAD currently provides browser-local decision support and preparation only. Formal valuation, authentication, purchase, custody and regulated dealing remain outside the pilot unless provided by an appropriately qualified or licensed third party.</p>
+          <p class="legal-note">Controlled pilot. The free Route Check is decision support only. It does not authenticate an item, provide a formal valuation, make a purchase offer or accept custody.</p>
         </div>
 
-        <div class="v3-route-machine" data-reveal data-delay="120" data-parallax="-0.04" aria-label="WAPAD route machine preview">
-          <div class="v3-machine__header"><span>WAPAD / ROUTE ENGINE</span><span class="v3-live"><i></i> PILOT</span></div>
+        <div class="v3-route-machine customer-route-machine" data-reveal data-delay="120" data-parallax="-0.04" aria-label="Example WAPAD route">
+          <div class="v3-machine__header"><span>EXAMPLE / INHERITED WATCH</span><span class="v3-live"><i></i> ROUTE CHECK</span></div>
           <div class="v3-machine__asset">
-            <small>INPUT</small>
-            <strong>Inherited gold watch</strong>
-            <span>unknown reference · 18ct case · papers absent</span>
+            <small>WHAT YOU KNOW</small>
+            <strong>Gold watch · unknown reference</strong>
+            <span>18ct mark · no papers · family piece</span>
           </div>
           <div class="v3-machine__split">
-            <div><small>ROUTE A</small><strong>Metal floor</strong><span>weigh · composition · recoverable value</span></div>
-            <div><small>ROUTE B</small><strong>Intact market</strong><span>reference · originality · sold comparables</span></div>
-            <div><small>ROUTE C</small><strong>Specialist</strong><span>watchmaker / registered valuer if evidence warrants</span></div>
+            <div><small>CHECK A</small><strong>Metal floor</strong><span>weight · composition · recoverable value</span></div>
+            <div><small>CHECK B</small><strong>Intact market</strong><span>reference · originality · sold comparables</span></div>
+            <div><small>CHECK C</small><strong>Specialist</strong><span>only if the unanswered questions justify it</span></div>
           </div>
-          <div class="v3-machine__decision"><span>DECISION RULE</span><p>Escalate only when the upside of being right is larger than the cost of verification.</p></div>
-          <div class="v3-machine__ticker" aria-hidden="true"><span>IDENTIFY</span><i></i><span>COMPARE</span><i></i><span>CONFIDENCE</span><i></i><span>ROUTE</span></div>
+          <div class="v3-machine__decision"><span>THE POINT</span><p>You do not need every answer before you know the next sensible question.</p></div>
+          <div class="v3-machine__ticker" aria-hidden="true"><span>CAPTURE</span><i></i><span>COMPARE</span><i></i><span>DECIDE</span><i></i><span>ROUTE</span></div>
         </div>
       </div>
       <div class="shell v3-hero__footer" data-reveal data-delay="220">
-        <span>ONE ASSET</span><i></i><span>MULTIPLE MARKETS</span><i></i><span>ONE BETTER NEXT STEP</span>
+        <span>NO BUYER PRESSURE</span><i></i><span>NO CUSTODY REQUIRED</span><i></i><span>ONE CLEARER NEXT STEP</span>
       </div>
     </section>
 
-    <section class="v3-section v3-section--paper" id="problem">
+    <section class="v3-section v3-section--paper" id="assets">
       <div class="shell">
         <div class="v3-section-head" data-reveal>
-          <div><span class="eyebrow">01 · The actual problem</span><h2>The expensive mistake is often<br><em>choosing the wrong market.</em></h2></div>
-          <p>“What is it worth?” is usually four questions hiding inside one sentence. The correct route can change when metal prices, originality, provenance, fees, time and buyer demand change.</p>
+          <div><span class="eyebrow">01 · Start with the object</span><h2>What do you<br><em>have in front of you?</em></h2></div>
+          <p>You do not need to know exactly what it is. Pick the closest category and WAPAD will start from observable facts rather than forcing a guess.</p>
         </div>
-
-        <div class="v3-mismatch-stage">
-          <article class="v3-mismatch-card" data-pop data-delay="0"><span>01 / SCRAP</span><h3>Material value can win.</h3><p>Sometimes a gold object is genuinely worth more through its recoverable metal route than through resale. Sentiment and branding do not automatically create a premium.</p><div class="v3-card-foot">Compare before preserving a fantasy premium.</div></article>
-          <article class="v3-mismatch-card" data-pop data-delay="80"><span>02 / RESALE</span><h3>And sometimes scrap destroys value.</h3><p>A signed jewel, original watch, matched estate set or scarce reference can be worth materially more intact. Once altered, the optionality can disappear.</p><div class="v3-card-foot">Preserve evidence before changing the object.</div></article>
-          <article class="v3-mismatch-card" data-pop data-delay="160"><span>03 / EXPERT</span><h3>Not every item deserves a $350 report.</h3><p>Formal valuation is valuable when the purpose demands it. The first job is deciding which pieces justify that cost and which only need a simpler market route.</p><div class="v3-card-foot">Pay for expertise where value-at-risk warrants it.</div></article>
-          <article class="v3-mismatch-card v3-mismatch-card--gold" data-pop data-delay="240"><span>04 / WAPAD</span><h3>So sell the routing decision first.</h3><p>WAPAD's product is not a magic price. It is a structured path from unknown object to better evidence, better market choice and the right specialist only when needed.</p><div class="v3-card-foot">Decision intelligence before transaction.</div></article>
+        <div class="customer-asset-grid">
+          <a class="customer-asset-card" data-pop href="assessment.html?asset=jewellery"><span>01</span><b>Au</b><h3>Gold jewellery</h3><p>Rings, chains, bracelets, signed pieces, mixed-metal or stone-set jewellery.</p><small>Start with jewellery ↗</small></a>
+          <a class="customer-asset-card" data-pop data-delay="60" href="assessment.html?asset=watches"><span>02</span><b>⌁</b><h3>Watches</h3><p>Modern, vintage, inherited, damaged, boxed or undocumented watches.</p><small>Start with a watch ↗</small></a>
+          <a class="customer-asset-card" data-pop data-delay="120" href="assessment.html?asset=bullion"><span>03</span><b>999</b><h3>Bullion & coins</h3><p>Bars, sovereigns, minted coins and pieces where authenticity and liquidity matter.</p><small>Start with bullion ↗</small></a>
+          <a class="customer-asset-card" data-pop data-delay="180" href="assessment.html?asset=gemstones"><span>04</span><b>◆</b><h3>Gemstones</h3><p>Loose or set stones, certificates, inherited pieces and uncertain treatment history.</p><small>Start with a stone ↗</small></a>
+          <a class="customer-asset-card" data-pop data-delay="240" href="assessment.html?asset=estate"><span>05</span><b>▦</b><h3>Estate / mixed collection</h3><p>Boxes, drawers and mixed groups that should be triaged before they are split or cleaned.</p><small>Start estate triage ↗</small></a>
+          <a class="customer-asset-card customer-asset-card--dark" data-pop data-delay="300" href="assessment.html?asset=unknown"><span>06</span><b>?</b><h3>I genuinely don’t know</h3><p>That is fine. Photos, marks, condition and context can be enough to choose the next question.</p><small>Start from unknown ↗</small></a>
         </div>
       </div>
     </section>
 
-    <section class="v3-section v3-section--ink" id="desk" data-scene="desk">
+    <section class="v3-section v3-section--ink" id="how" data-scene="how">
       <div class="shell">
         <div class="v3-section-head v3-section-head--light" data-reveal>
-          <div><span class="eyebrow eyebrow--gold">02 · The redesigned desk</span><h2>One upload.<br><em>Four possible routes.</em></h2></div>
-          <p>WAPAD stays useful even if the operator moves. The intake, decision logic, market research and specialist routing are digital. Physical expertise is brought in only when the asset requires it.</p>
+          <div><span class="eyebrow eyebrow--gold">02 · Three simple steps</span><h2>From “what is this?”<br><em>to “what do I do next?”</em></h2></div>
+          <p>WAPAD is deliberately staged. Start free. Add research or a specialist only when the unanswered question is important enough to justify it.</p>
         </div>
 
-        <div class="v3-flow" data-flow>
-          <div class="v3-flow__track" aria-hidden="true"><i data-flow-line></i></div>
-          <article class="v3-flow-step" data-reveal><span>01</span><div><small>CAPTURE</small><h3>Evidence in, assumptions out.</h3><p>Photos, marks, dimensions, papers, condition, provenance and the owner's actual objective.</p></div><b>2–5 min</b></article>
-          <article class="v3-flow-step" data-reveal><span>02</span><div><small>COMPARE</small><h3>Build the route matrix.</h3><p>Material floor, intact resale, specialist/auction path and hold/insure context are compared separately.</p></div><b>automated</b></article>
-          <article class="v3-flow-step" data-reveal><span>03</span><div><small>CONFIDENCE</small><h3>Separate fact from uncertainty.</h3><p>The system shows what is known, what is inferred, and what cannot responsibly be answered from photos.</p></div><b>explicit</b></article>
-          <article class="v3-flow-step" data-reveal><span>04</span><div><small>ESCALATE</small><h3>Pay an expert only when it matters.</h3><p>NCJV valuer, gemmologist, watch specialist, auction house, bullion specialist or licensed buyer — matched to the question.</p></div><b>selective</b></article>
-        </div>
-
-        <div class="v3-desk-demo" data-reveal>
-          <div class="v3-desk-demo__nav"><span>LIVE PRODUCT LOGIC</span><button type="button" class="active" data-demo="estate">Estate box</button><button type="button" data-demo="watch">Watch</button><button type="button" data-demo="gold">Gold jewellery</button><button type="button" data-demo="bullion">Bullion</button></div>
-          <div class="v3-desk-demo__body">
-            <div class="v3-demo-object"><small>OBJECTIVE</small><h3 data-demo-title>Sort an inherited box without destroying optionality.</h3><p data-demo-copy>Separate likely precious metal, signed/collectable pieces, obvious costume material and items that need professional identification before the family splits or disposes of anything.</p></div>
-            <div class="v3-demo-routes" data-demo-routes>
-              <div><span>A</span><strong>Triage</strong><small>first</small></div><div><span>B</span><strong>Formal value</strong><small>selected pieces</small></div><div><span>C</span><strong>Auction / resale</strong><small>where premium exists</small></div><div><span>D</span><strong>Metal route</strong><small>where it doesn't</small></div>
-            </div>
+        <div class="customer-steps" data-customer-steps data-reveal>
+          <div class="customer-step-tabs" role="tablist" aria-label="How WAPAD works">
+            <button type="button" class="active" data-step-tab="route" aria-selected="true"><span>01</span><strong>Route Check</strong><small>Free · now</small></button>
+            <button type="button" data-step-tab="brief" aria-selected="false"><span>02</span><strong>Decision Brief</strong><small>Deeper research</small></button>
+            <button type="button" data-step-tab="expert" aria-selected="false"><span>03</span><strong>Right next route</strong><small>Expert / market</small></button>
+          </div>
+          <div class="customer-step-panel" data-step-panel>
+            <div><small>STEP 01 / AVAILABLE NOW</small><h3>Organise the evidence before you ask for a price.</h3><p>The Route Check captures what you can actually observe: photos, marks, papers, condition, provenance and what decision you are trying to make. It then shows the evidence gaps and likely next route.</p><ul><li>2–5 minute browser-based intake</li><li>Photos stay on your device in the current pilot</li><li>No purchase offer and no custody</li></ul><a class="button button--gold" href="assessment.html">Run Route Check <span>↗</span></a></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="v3-section v3-section--cream" id="model">
+    <section class="v3-section v3-section--cream" id="services">
       <div class="shell">
         <div class="v3-section-head" data-reveal>
-          <div><span class="eyebrow">03 · Economic model</span><h2>Make money from clarity.<br><em>Not inventory risk.</em></h2></div>
-          <p>The strongest version of WAPAD is asset-light: no showroom dependency, no need to fund a book of jewellery, and no requirement to personally pretend to be every specialist.</p>
+          <div><span class="eyebrow">03 · Services</span><h2>Use only as much help<br><em>as the asset needs.</em></h2></div>
+          <p>The free Route Check is live. Paid services below are planned pilot products and are clearly marked so you know what is available today.</p>
         </div>
 
-        <div class="v3-offers">
-          <article class="v3-offer" data-pop><div class="v3-offer__tag">FREE LEAD ENGINE</div><h3>Route Check</h3><p class="v3-offer__price">$0</p><p>Browser-based intake that organises the asset and produces the evidence checklist and likely next route.</p><ul><li>2–5 minute intake</li><li>Local-first privacy</li><li>Lead qualification without pressure</li></ul><a href="assessment.html">Run it now <span>↗</span></a></article>
-          <article class="v3-offer v3-offer--focus" data-pop data-delay="90"><div class="v3-offer__tag">PLANNED PILOT</div><h3>Decision Brief</h3><p class="v3-offer__price">$49 <small>target</small></p><p>A paid market-routing brief: evidence gaps, relevant comparables, confidence and the most defensible next step. Not a formal valuation or authentication certificate.</p><ul><li>Market-route research</li><li>Confidence + evidence gaps</li><li>Specialist trigger conditions</li></ul><span class="v3-soon">Pilot queue after backend launch</span></article>
-          <article class="v3-offer" data-pop data-delay="180"><div class="v3-offer__tag">HIGH-VALUE PROBLEM</div><h3>Estate Triage</h3><p class="v3-offer__price">$249 <small>target</small></p><p>Structured triage for a mixed collection before a family pays to value everything, splits matched pieces or throws away context.</p><ul><li>Up to 20 items</li><li>Priority map</li><li>Expert shortlist only where warranted</li></ul><span class="v3-soon">Designed for remote delivery</span></article>
-          <article class="v3-offer v3-offer--dark" data-pop data-delay="270"><div class="v3-offer__tag">THE SCALE ENGINE</div><h3>Partner Desk</h3><p class="v3-offer__price">B2B</p><p>White-label intake and case qualification for estate advisers, jewellers, auctioneers, valuers and licensed second-hand businesses.</p><ul><li>Qualified digital intake</li><li>Partner-specific routing rules</li><li>Subscription / per-case economics</li></ul><span class="v3-soon">The location-independent moat</span></article>
-        </div>
-
-        <div class="v3-revenue-map" data-reveal>
-          <div><small>CONSUMER</small><strong>Free Route Check</strong><span>build trust + structured lead</span></div><i>→</i><div><small>PAID</small><strong>Decision / Estate Brief</strong><span>cash flow without buying inventory</span></div><i>→</i><div><small>NETWORK</small><strong>Expert handoff</strong><span>qualified demand, disclosed economics</span></div><i>→</i><div><small>B2B</small><strong>Partner Desk</strong><span>recurring software revenue</span></div>
+        <div class="customer-service-grid">
+          <article class="customer-service-card customer-service-card--live" data-pop>
+            <div class="customer-service-card__meta"><span>AVAILABLE NOW</span><b>$0</b></div>
+            <h3>Free Route Check</h3><p>Get your evidence organised and see which questions or routes deserve attention before you speak to a buyer, auction house or valuer.</p>
+            <ul><li>Gold, jewellery, watches, bullion, gemstones, estates</li><li>Browser-local photo preview</li><li>Printable / copyable evidence brief</li></ul>
+            <a href="assessment.html">Run it now <span>↗</span></a>
+          </article>
+          <article class="customer-service-card" data-pop data-delay="80" data-service-card>
+            <div class="customer-service-card__meta"><span>PLANNED PILOT</span><b>$49 target</b></div>
+            <h3>Decision Brief</h3><p>For an item that deserves more than an automated route check but not necessarily a formal valuation.</p>
+            <ul><li>Market-route research</li><li>Evidence gaps and confidence notes</li><li>Comparable-market context</li></ul>
+            <button type="button" data-service-toggle>What would I receive? <span>＋</span></button>
+            <div class="customer-service-card__detail" hidden>A concise human-reviewed brief showing what can be supported from the evidence, what still needs verification, and which next route appears most defensible. It would not be sold as a registered valuation or authentication certificate.</div>
+          </article>
+          <article class="customer-service-card" data-pop data-delay="160" data-service-card>
+            <div class="customer-service-card__meta"><span>PLANNED PILOT</span><b>$249 target</b></div>
+            <h3>Estate Triage</h3><p>For mixed collections where the first risk is splitting, cleaning or disposing of something before the important pieces are identified.</p>
+            <ul><li>Up to 20 items in the pilot concept</li><li>Priority map for deeper work</li><li>Preserve matched sets and provenance</li></ul>
+            <button type="button" data-service-toggle>What would I receive? <span>＋</span></button>
+            <div class="customer-service-card__detail" hidden>A structured triage map: what appears low-information, what deserves measurement or market research, what should stay grouped, and what should go directly to a qualified specialist.</div>
+          </article>
+          <article class="customer-service-card" data-pop data-delay="240" data-service-card>
+            <div class="customer-service-card__meta"><span>WHEN NEEDED</span><b>Specialist route</b></div>
+            <h3>Know which expert to seek</h3><p>A watchmaker, registered jewellery valuer, gemmologist, bullion specialist or auction house answers different questions.</p>
+            <ul><li>Avoid paying the wrong expert for the wrong question</li><li>Keep formal valuation separate from market routing</li><li>Use physical examination when photos are not enough</li></ul>
+            <button type="button" data-service-toggle>How does referral work? <span>＋</span></button>
+            <div class="customer-service-card__detail" hidden>The current pilot identifies the type of specialist or market to look for. A named partner/referral network will only be promoted after those providers are verified.</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="v3-section v3-section--paper" id="trust">
+    <section class="v3-section v3-section--paper" id="examples">
       <div class="shell">
-        <div class="v3-trust-grid">
-          <div class="v3-trust-copy" data-reveal><span class="eyebrow">04 · Legitimacy by design</span><h2>Credibility comes from<br><em>knowing what not to claim.</em></h2><p>The weakness in the old concept was obvious: if WAPAD looked like an uncredentialled valuer who might also buy the item, the customer had every reason to wonder whether the “valuation” was just a lowball offer wearing a suit.</p><p>The new model removes that conflict from the centre of the business.</p></div>
-          <div class="v3-rules">
-            <article data-pop><span>01</span><div><h3>No fake expertise.</h3><p>WAPAD can research markets and structure decisions. It does not call a photo-based opinion an authentication or formal jewellery valuation.</p></div></article>
-            <article data-pop data-delay="70"><span>02</span><div><h3>Credential-triggered escalation.</h3><p>If the purpose is insurance, probate, legal division, gem identification or high-risk authenticity, the route explicitly names the credential or specialist required.</p></div></article>
-            <article data-pop data-delay="140"><span>03</span><div><h3>Transparent economics.</h3><p>Any future partner/referral economics should be disclosed. The customer should know whether the recommended route pays WAPAD.</p></div></article>
-            <article data-pop data-delay="210"><span>04</span><div><h3>No need to own the asset.</h3><p>Advice can be valuable before custody, purchase or consignment. That keeps capital, security and location friction out of the core product.</p></div></article>
+        <div class="v3-section-head" data-reveal>
+          <div><span class="eyebrow">04 · See the route change</span><h2>The same question can have<br><em>four different answers.</em></h2></div>
+          <p>Tap an example. The point is not that WAPAD knows the final value from a photo — it is that the evidence tells you which route deserves attention next.</p>
+        </div>
+        <div class="v3-desk-demo customer-demo" data-reveal>
+          <div class="v3-desk-demo__nav"><span>EXAMPLE ROUTES</span><button type="button" class="active" data-demo="estate">Estate box</button><button type="button" data-demo="watch">Watch</button><button type="button" data-demo="gold">Gold jewellery</button><button type="button" data-demo="bullion">Bullion</button></div>
+          <div class="v3-desk-demo__body">
+            <div class="v3-demo-object"><small>WHAT YOU ARE TRYING TO DO</small><h3 data-demo-title>Sort an inherited box without destroying optionality.</h3><p data-demo-copy>Separate likely precious metal, signed or collectable pieces, obvious low-value material and items that need professional identification before the family splits or disposes of anything.</p></div>
+            <div class="v3-demo-routes" data-demo-routes><div><span>A</span><strong>Triage</strong><small>first</small></div><div><span>B</span><strong>Formal value</strong><small>selected pieces</small></div><div><span>C</span><strong>Auction / resale</strong><small>where premium exists</small></div><div><span>D</span><strong>Metal route</strong><small>where it doesn’t</small></div></div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="v3-boundary" data-reveal>
-          <div><span class="v3-boundary__label">THE WAPAD BOUNDARY</span><h3>“I don't know yet” is a professional answer.</h3></div>
-          <p>Unknown origin, uncertain stones, missing watch references, suspicious hallmarks or conflicting market signals are not problems to hide. They are the conditions that trigger the next test.</p>
-          <a class="text-link" href="sources.html">See standards & sources <span>↗</span></a>
+    <section class="v3-section v3-section--ink" id="trust">
+      <div class="shell customer-trust-grid">
+        <div class="customer-trust-copy" data-reveal><span class="eyebrow eyebrow--gold">05 · Why WAPAD</span><h2>Keep uncertainty<br><em>visible.</em></h2><p>You should be able to tell the difference between an observed fact, a plausible inference and something that genuinely needs physical examination or specialist credentials.</p><a class="button button--ghost" href="sources.html">See scope & sources <span>↗</span></a></div>
+        <div class="customer-trust-list">
+          <article data-pop><span>01</span><h3>You keep the asset</h3><p>The digital pilot does not require you to hand over jewellery, watches or documents to use the Route Check.</p></article>
+          <article data-pop data-delay="60"><span>02</span><h3>No purchase conflict</h3><p>WAPAD is not making a purchase offer in the controlled pilot, so the first output is about the decision rather than closing a transaction.</p></article>
+          <article data-pop data-delay="120"><span>03</span><h3>Credentials are not blurred</h3><p>Formal jewellery valuation, gemmology, watch authentication and regulated dealing are specialist activities. WAPAD routes those questions instead of pretending a browser replaces them.</p></article>
+          <article data-pop data-delay="180"><span>04</span><h3>Digital first, location-light</h3><p>The Route Check can be used from anywhere. Any physical inspection, regulated service or named specialist depends on jurisdiction and availability.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="v3-section v3-section--sand" id="portable">
+    <section class="v3-section v3-section--cream customer-location" id="location">
+      <div class="shell customer-location__grid">
+        <div data-reveal><span class="eyebrow">06 · Location</span><h2>In WA, interstate<br><em>or somewhere else?</em></h2><p>WAPAD was founded in Western Australia, but the digital Route Check is designed to travel with you. You can prepare an asset remotely; if a physical inspection is warranted, the next route depends on where you are and what expertise is available there.</p><button class="button button--ink" type="button" data-chat-topic="location">Ask about my location <span>↗</span></button></div>
+        <div class="customer-location__map" data-reveal data-delay="100" aria-label="Digital-first service illustration">
+          <div class="customer-location__centre"><strong>WAPAD</strong><small>DIGITAL ROUTE CHECK</small></div>
+          <span class="customer-location__node n1">WA</span><span class="customer-location__node n2">NSW</span><span class="customer-location__node n3">VIC</span><span class="customer-location__node n4">REMOTE</span>
+          <i class="customer-location__ring r1"></i><i class="customer-location__ring r2"></i><i class="customer-location__ring r3"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="v3-section v3-section--paper customer-faq" id="faq">
       <div class="shell">
-        <div class="v3-portable">
-          <div class="v3-portable__copy" data-reveal><span class="eyebrow">05 · Location independence</span><h2>The desk moves.<br><em>The logic stays.</em></h2><p>WAPAD should not be a Geraldton shop disguised as a website. The product is the intake, evidence framework, market research, routing engine and partner network. Those can follow the operator anywhere.</p><div class="v3-portable__chips"><span>Australia-wide intake</span><span>remote case review</span><span>specialist network</span><span>no inventory required</span><span>cloud workflow</span><span>portable brand</span></div></div>
-          <div class="v3-map" data-reveal data-delay="100" aria-label="Location-light operating model">
-            <div class="v3-map__ring r1"></div><div class="v3-map__ring r2"></div><div class="v3-map__ring r3"></div>
-            <div class="v3-map__core"><strong>WAPAD</strong><small>DIGITAL DESK</small></div>
-            <div class="v3-map__node n1"><span>CLIENT</span><small>photos + context</small></div>
-            <div class="v3-map__node n2"><span>VALUER</span><small>when formal value matters</small></div>
-            <div class="v3-map__node n3"><span>WATCH</span><small>specialist verification</small></div>
-            <div class="v3-map__node n4"><span>AUCTION</span><small>market discovery</small></div>
-            <div class="v3-map__node n5"><span>METAL</span><small>recoverable route</small></div>
-          </div>
+        <div class="v3-section-head" data-reveal><div><span class="eyebrow">07 · Common questions</span><h2>Before you<br><em>send anything anywhere.</em></h2></div><p>These are the questions the quick-answer button is built to handle too.</p></div>
+        <div class="customer-faq__list">
+          <details data-pop><summary>Do you buy gold or jewellery?<span>＋</span></summary><p>Not in the controlled digital pilot. WAPAD currently helps organise evidence and choose the next route. If a future buying service is launched, it will be clearly separated from decision support and subject to the required licensing and controls.</p></details>
+          <details data-pop data-delay="50"><summary>Can you tell me what my watch is worth?<span>＋</span></summary><p>The free Route Check can help identify what evidence and market matter next. A defensible market estimate or formal valuation may require reference confirmation, originality checks, physical examination or a qualified specialist.</p></details>
+          <details data-pop data-delay="100"><summary>I’m not in Western Australia. Can I still use WAPAD?<span>＋</span></summary><p>Yes for the digital Route Check. It is browser-based and location-light. Physical inspections, named referrals and regulated services depend on your location and the type of asset.</p></details>
+          <details data-pop data-delay="150"><summary>Do my photos get uploaded?<span>＋</span></summary><p>Not in the current free Route Check. Selected images are previewed locally in your browser and are not transmitted to WAPAD.</p></details>
+          <details data-pop data-delay="200"><summary>Why not just go straight to a jeweller, buyer or auction house?<span>＋</span></summary><p>Sometimes that is exactly the right next step. WAPAD is useful when you are unsure which one is appropriate, whether the item warrants specialist cost, or whether a different market could materially change the outcome.</p></details>
         </div>
       </div>
     </section>
 
-    <section class="v3-section v3-section--ink" id="automation">
-      <div class="shell">
-        <div class="v3-section-head v3-section-head--light" data-reveal><div><span class="eyebrow eyebrow--gold">06 · Automation architecture</span><h2>Human judgement at the edge.<br><em>Automation everywhere else.</em></h2></div><p>The repetitive work should be machine-run: capture, classification, reminders, evidence checks, market queries, report assembly and follow-up. Human attention is reserved for uncertainty and high value-at-risk.</p></div>
-        <div class="v3-stack" data-reveal>
-          <div><span>01</span><strong>Website / app</strong><small>Cloudflare + GitHub</small></div>
-          <i>→</i><div><span>02</span><strong>AI triage</strong><small>ChatGPT / replaceable model layer</small></div>
-          <i>→</i><div><span>03</span><strong>Lifecycle</strong><small>Klaviyo + workflow automation</small></div>
-          <i>→</i><div><span>04</span><strong>Case data</strong><small>Cloudflare storage / database</small></div>
-          <i>→</i><div><span>05</span><strong>Escalation</strong><small>qualified specialist only when triggered</small></div>
-        </div>
-        <div class="v3-automation-note" data-reveal><strong>Model-agnostic on purpose.</strong><p>The commercial asset should be the workflow, data and network — not dependence on one AI vendor. The reasoning layer can change as models improve.</p></div>
-      </div>
-    </section>
-
-    <section class="v3-section v3-section--cream" id="pilot">
-      <div class="shell v3-pilot">
-        <div data-reveal><span class="eyebrow">07 · Start small, learn fast</span><h2>The pilot does not need<br><em>a shop, stock or a safe.</em></h2><p>Start by proving that people will submit assets, complete the evidence flow and pay for decision support before investing in custody, inventory or premises.</p></div>
-        <div class="v3-pilot__metrics">
-          <div data-pop><strong data-count="100">0</strong><span>route checks</span><small>first validation target</small></div>
-          <div data-pop data-delay="80"><strong data-count="20">0</strong><span>paid briefs</span><small>prove willingness to pay</small></div>
-          <div data-pop data-delay="160"><strong data-count="5">0</strong><span>expert partners</span><small>cover high-risk categories</small></div>
-          <div data-pop data-delay="240"><strong data-count="3">0</strong><span>B2B pilots</span><small>prove recurring value</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="v3-final">
+    <section class="v3-final customer-final">
       <div class="v3-final__glow" aria-hidden="true"></div>
       <div class="shell v3-final__grid">
-        <div data-reveal><span class="eyebrow eyebrow--gold">THE NEW WAPAD</span><h2>Know the route<br>before you <em>move the asset.</em></h2><p>Start with the browser-local Route Check. Keep the asset in your hands. Keep uncertainty visible. Escalate only when the evidence says the next expert is worth it.</p><div class="v3-final__actions"><a class="button button--gold" href="assessment.html">Run Route Check <span>↗</span></a><a class="button button--ghost" href="knowledge.html">Open Knowledge Desk <span>↗</span></a></div></div>
-        <div class="v3-final__stamp" data-reveal data-delay="120"><span>WAPAD</span><strong>DECISION<br>BEFORE<br>TRANSACTION</strong><small>CONTROLLED PILOT · 2026</small></div>
+        <div data-reveal><span class="eyebrow eyebrow--gold">START FREE</span><h2>Keep the asset.<br>Build the <em>next step.</em></h2><p>You do not need a buyer, a shop visit or a formal valuation to start organising the decision. Run the Route Check while the marks, papers and context are still in front of you.</p><div class="v3-final__actions"><a class="button button--gold" href="assessment.html">Run free Route Check <span>↗</span></a><button class="button button--ghost" type="button" data-chat-topic="general">Ask WAPAD <span>↗</span></button></div></div>
+        <div class="v3-final__stamp" data-reveal data-delay="120"><span>WAPAD</span><strong>ROUTE<br>BEFORE<br>TRANSACTION</strong><small>CONTROLLED DIGITAL PILOT</small></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="shell footer__grid">
-      <div><a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27"></circle><path d="M18 38 26 20l6 13 6-13 8 18"></path><path d="M21 43h22"></path></svg></span><span class="brand__text"><strong>WAPAD</strong><small>Precious Asset Decision Desk</small></span></a><p>Founded in Western Australia. Designed as a portable, evidence-led digital desk for precious and collectable assets.</p></div>
-      <div><small>DESK</small><a href="assessment.html">Route Check</a><a href="knowledge.html">Knowledge Desk</a><a href="#model">Business model</a></div>
-      <div><small>TRUST</small><a href="privacy.html">Privacy</a><a href="sources.html">Sources</a><a href="#trust">Scope boundary</a></div>
-      <div class="footer__status"><small>STATUS</small><strong><i></i> Controlled pilot</strong><span>Paid services, custody and transactions are not yet live.</span></div>
+      <div><a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27"></circle><path d="M18 38 26 20l6 13 6-13 8 18"></path><path d="M21 43h22"></path></svg></span><span class="brand__text"><strong>WAPAD</strong><small>Precious Asset Decision Desk</small></span></a><p>Evidence-led decision support for precious and collectable assets. Founded in Western Australia, designed for remote first-pass routing.</p></div>
+      <div><small>START</small><a href="assessment.html">Free Route Check</a><a href="#services">Services</a><a href="knowledge.html">Knowledge Desk</a></div>
+      <div><small>TRUST</small><a href="privacy.html">Privacy</a><a href="sources.html">Sources & scope</a><a href="#faq">FAQ</a></div>
+      <div class="footer__status"><small>STATUS</small><strong><i></i> Controlled digital pilot</strong><span>Paid services, custody and transactions are not yet live.</span></div>
     </div>
-    <div class="shell footer__bottom"><span>© <span data-year></span> WAPAD</span><span>ROUTE BEFORE TRANSACTION</span></div>
+    <div class="shell footer__bottom"><span>© <span data-year></span> WAPAD</span><span>KEEP THE ASSET · CHOOSE THE ROUTE</span></div>
   </footer>
 
   <script src="assets/v2.js" defer></script>
   <script src="assets/v3.js" defer></script>
+  <script src="assets/customer.js" defer></script>
 </body>
 </html>
