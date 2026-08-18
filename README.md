@@ -1,30 +1,46 @@
 # WAPAD — WA Precious Asset Desk
 
-Public website for **WA Precious Asset Desk (WAPAD)**.
+Production website and controlled-pilot web application for **WA Precious Asset Desk (WAPAD)**.
 
-## Direction
+## Current deployment
 
-- Premium precious-asset desk rather than pawn-shop styling.
-- Gold, jewellery, watches, bullion, gemstones and estate parcels.
-- Evidence-led method: identify → verify → value → route.
-- Value is separated into intrinsic, market, collectable and utility layers.
-- Compliance language is deliberately careful while the operating model is being established.
-- Current public-facing state remains controlled pre-launch until licensing, verified trade-measurement equipment, security and intake procedures are completed.
+- Source: GitHub (`main`)
+- Hosting: Cloudflare Workers Static Assets
+- Deployment: Cloudflare Git integration / Wrangler
+- Temporary URL: `https://wapad.pmhaik.workers.dev`
+- Production domain: pending
 
-## GitHub Pages
+Any push to `main` triggers a Cloudflare deployment.
 
-Deployment is handled by **GitHub Actions** using `.github/workflows/pages.yml`.
+## WAPAD v2
 
-Production preview URL: `https://zalahk417.github.io/WAPAD/`
+The v2 web product includes:
 
-Any push to `main` triggers a fresh static-site deployment.
+- Premium responsive public desk experience
+- Asset-specific pathways for jewellery, watches, bullion, gemstones and estate parcels
+- Evidence-led method and route explanation
+- Browser-local private pre-assessment wizard
+- Local draft save / resume
+- Local photo preview (photos are not uploaded)
+- Preparation-route logic
+- Printable / copyable assessment brief
+- Searchable knowledge desk
+- Offline-capable core pages through a small service worker
+- Conservative controlled-pilot readiness status
 
-## Primary references
+## Deliberate launch boundary
 
-- National Measurement Institute — precious metals and stones trade measurement.
-- Western Australia Police — Pawnbroker and Second-Hand Dealer licensing.
-- Gemological Institute of America — touchstone testing method for karat gold.
+The website must not imply that WAPAD is already providing regulated or custody services before the required operating controls are complete.
 
-## Images
+The current pre-assessment is **information and preparation only**. It does not:
 
-Images are loaded from Wikimedia Commons sources selected for the WAPAD free-image library. Each gallery image links back to its Commons file record. Licence and attribution requirements remain with the individual source record.
+- authenticate an item
+- perform a trade measurement
+- calculate a live valuation or purchase offer
+- create a transaction
+- upload evidence to WAPAD
+- accept custody or payment
+
+Secure intake, production email, appointment booking, D1/R2-backed cases, authentication, payments and admin workflows are backend launch steps and should only be enabled after the associated privacy, licensing, custody, security and operational controls are approved.
+
+See `LAUNCH_CHECKLIST.md` for the operating gate.

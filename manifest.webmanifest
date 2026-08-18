@@ -1,0 +1,12 @@
+{
+  "name": "WAPAD — WA Precious Asset Desk",
+  "short_name": "WAPAD",
+  "description": "Evidence-led precious asset preparation and routing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b09",
+  "theme_color": "#0b0b09",
+  "icons": [
+    {"src":"/assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
+}
