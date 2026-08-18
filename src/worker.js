@@ -57,26 +57,21 @@ function mapPage(page) {
 }
 
 async function notionQuery(env, filter) {
-  if (!env.NOTION_TOKEN) {
-    throw new Error("NOTION_TOKEN is not configured");
-  }
+  if (!env.NOTION_TOKEN) throw new Error("NOTION_TOKEN is not configured");
 
-  const response = await fetch(
-    `https://api.notion.com/v1/data_sources/${CONTENT_DATA_SOURCE_ID}/query`,
-    {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${env.NOTION_TOKEN}`,
-        "notion-version": NOTION_VERSION,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        filter,
-        sorts: [{ property: "Publish Date", direction: "descending" }],
-        page_size: 100,
-      }),
+  const response = await fetch(`https://api.notion.com/v1/data_sources/${CONTENT_DATA_SOURCE_ID}/query`, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${env.NOTION_TOKEN}`,
+      "notion-version": NOTION_VERSION,
+      "content-type": "application/json",
     },
-  );
+    body: JSON.stringify({
+      filter,
+      sorts: [{ property: "Publish Date", direction: "descending" }],
+      page_size: 100,
+    }),
+  });
 
   if (!response.ok) {
     const detail = await response.text();
@@ -88,12 +83,13 @@ async function notionQuery(env, filter) {
 }
 
 function liveWebsiteFilter(extra = []) {
-  const filters = [
-    { property: "Status", select: { equals: "Live" } },
-    { property: "Channel", multi_select: { contains: "Website" } },
-    ...extra,
-  ];
-  return { and: filters };
+  return {
+    and: [
+      { property: "Status", select: { equals: "Live" } },
+      { property: "Channel", multi_select: { contains: "Website" } },
+      ...extra,
+    ],
+  };
 }
 
 async function listContent(request, env) {
@@ -106,10 +102,7 @@ async function listContent(request, env) {
 }
 
 async function getContentBySlug(env, slug) {
-  const result = await notionQuery(
-    env,
-    liveWebsiteFilter([{ property: "Slug", rich_text: { equals: slug } }]),
-  );
+  const result = await notionQuery(env, liveWebsiteFilter([{ property: "Slug", rich_text: { equals: slug } }]));
   const page = result.results[0];
   return page ? mapPage(page) : null;
 }
@@ -169,13 +162,28 @@ function articleHtml(item, indexingEnabled) {
 </html>`;
 }
 
+async function knowledgeIndex(request, env) {
+  const assetResponse = await env.ASSETS.fetch(request);
+  if (!assetResponse.ok || !assetResponse.headers.get("content-type")?.includes("text/html")) return assetResponse;
+
+  return new HTMLRewriter()
+    .on("body", {
+      element(element) {
+        element.append('<script src="/assets/cms.js" defer></script>', { html: true });
+      },
+    })
+    .transform(assetResponse);
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
     try {
-      if (url.pathname === "/api/content") {
-        return await listContent(request, env);
+      if (url.pathname === "/api/content") return await listContent(request, env);
+
+      if (url.pathname === "/knowledge.html" || url.pathname === "/knowledge/") {
+        return await knowledgeIndex(request, env);
       }
 
       if (url.pathname.startsWith("/knowledge/") && url.pathname !== "/knowledge/") {
@@ -191,12 +199,8 @@ export default {
       }
     } catch (error) {
       console.error(JSON.stringify({ event: "cms_connector_error", path: url.pathname, message: error.message }));
-      if (url.pathname.startsWith("/api/")) {
-        return json({ items: [], connectorReady: false }, 503);
-      }
-      if (url.pathname.startsWith("/knowledge/")) {
-        return new Response("Knowledge article temporarily unavailable", { status: 503 });
-      }
+      if (url.pathname.startsWith("/api/")) return json({ items: [], connectorReady: false }, 503);
+      if (url.pathname.startsWith("/knowledge/")) return new Response("Knowledge article temporarily unavailable", { status: 503 });
     }
 
     return env.ASSETS.fetch(request);
