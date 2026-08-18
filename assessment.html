@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b09">
+  <meta name="description" content="WAPAD private pre-assessment — prepare a structured precious-asset brief in your browser.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Private Pre-Assessment — WAPAD</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/v2.css">
+</head>
+<body class="page-assessment">
+  <a class="skip-link" href="#assessment-app">Skip to assessment</a>
+  <div class="statusbar"><div class="shell statusbar__inner"><span class="statusbar__state"><i></i> Browser-local pre-assessment</span><span>Nothing is uploaded by this tool</span><span class="statusbar__desktop">Controlled pilot · no transaction service</span></div></div>
+  <header class="site-header site-header--solid"><div class="shell nav"><a class="brand" href="index.html" aria-label="WAPAD home"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27"></circle><path d="M18 38 26 20l6 13 6-13 8 18"></path><path d="M21 43h22"></path></svg></span><span class="brand__text"><strong>WAPAD</strong><small>WA Precious Asset Desk</small></span></a><a class="nav-back" href="index.html">← Back to desk</a></div></header>
+
+  <main id="assessment-app" class="assessment-shell"><div class="shell assessment-layout">
+    <aside class="assessment-aside"><div class="assessment-aside__sticky"><span class="eyebrow eyebrow--gold">Private pre-assessment</span><h1>Build the brief<br>before the appointment.</h1><p>This tool organises observable facts, questions and evidence. It does not authenticate an item, calculate a live value or submit information to WAPAD.</p><div class="privacy-chip"><span>LOCAL ONLY</span><p>Your answers are stored only in this browser unless you delete them or export the summary yourself.</p></div><div class="assessment-progress" aria-label="Assessment progress"><span data-progress-label>Step 1 of 6</span><div><i data-progress-bar></i></div></div><div class="draft-box" data-draft-box hidden><small>SAVED DRAFT</small><strong data-draft-ref></strong><button type="button" class="text-btn" data-resume-draft>Resume saved draft →</button><button type="button" class="text-btn text-btn--muted" data-delete-draft>Delete draft</button></div></div></aside>
+
+    <section class="assessment-card"><form id="assessment-form" novalidate>
+      <div class="wizard-step active" data-step="1"><div class="wizard-head"><span>01 / ASSET</span><h2>What are you holding?</h2><p>Choose the closest category. “Not sure” is a valid starting point.</p></div><div class="choice-grid choice-grid--asset">
+        <label><input type="radio" name="asset" value="jewellery"><span><b>Au</b><strong>Gold jewellery</strong><small>Chains, rings, bracelets, brooches, mixed pieces</small></span></label>
+        <label><input type="radio" name="asset" value="watches"><span><b>⌁</b><strong>Watch</strong><small>Modern, vintage, mechanical or quartz</small></span></label>
+        <label><input type="radio" name="asset" value="bullion"><span><b>999</b><strong>Bullion / coin</strong><small>Bars, sovereigns, minted or poured pieces</small></span></label>
+        <label><input type="radio" name="asset" value="gemstones"><span><b>◆</b><strong>Gemstone</strong><small>Loose or set stone, known or unknown</small></span></label>
+        <label><input type="radio" name="asset" value="estate"><span><b>▦</b><strong>Estate / mixed parcel</strong><small>Multiple items or uncertain grouping</small></span></label>
+        <label><input type="radio" name="asset" value="unknown"><span><b>?</b><strong>Not sure</strong><small>Start with what you can observe</small></span></label>
+      </div></div>
+
+      <div class="wizard-step" data-step="2"><div class="wizard-head"><span>02 / OBJECTIVE</span><h2>What are you trying to decide?</h2><p>Your objective changes what evidence matters most.</p></div><div class="choice-grid">
+        <label><input type="radio" name="objective" value="sell"><span><strong>Should I sell it?</strong><small>Understand likely routes and what to verify first.</small></span></label>
+        <label><input type="radio" name="objective" value="identify"><span><strong>What exactly is it?</strong><small>Build an identification and authentication question set.</small></span></label>
+        <label><input type="radio" name="objective" value="insure"><span><strong>Should I insure or document it?</strong><small>Preserve evidence and identify replacement-value questions.</small></span></label>
+        <label><input type="radio" name="objective" value="estate"><span><strong>I am sorting an estate.</strong><small>Triage before cleaning, splitting or disposing.</small></span></label>
+        <label><input type="radio" name="objective" value="compare"><span><strong>I already have an offer.</strong><small>Work out what information is missing from the comparison.</small></span></label>
+        <label><input type="radio" name="objective" value="other"><span><strong>Something else.</strong><small>Keep the brief open-ended.</small></span></label>
+      </div></div>
+
+      <div class="wizard-step" data-step="3"><div class="wizard-head"><span>03 / OBSERVATIONS</span><h2>Record facts before assumptions.</h2><p>Leave any field blank if you do not know. Do not force a guess.</p></div><div class="form-grid">
+        <label class="field field--wide"><span>Short description</span><textarea name="description" rows="3" placeholder="Example: Yellow metal ring with clear central stone, stamped 750 inside band"></textarea></label>
+        <label class="field"><span>Visible hallmark / stamp</span><input name="hallmark" type="text" placeholder="e.g. 750, 18K, 925, serial, logo"></label>
+        <label class="field"><span>Known maker / brand</span><input name="maker" type="text" placeholder="Leave blank if unknown"></label>
+        <label class="field"><span>Approximate weight</span><input name="weight" type="text" inputmode="decimal" placeholder="e.g. 14.2 g"></label>
+        <label class="field"><span>Reference / serial</span><input name="reference" type="text" placeholder="If visible"></label>
+        <label class="field"><span>Known material</span><input name="material" type="text" placeholder="e.g. 18ct gold, platinum, unknown"></label>
+        <label class="field"><span>Condition</span><select name="condition"><option value="">Choose...</option><option>Excellent / unworn</option><option>Good / normal wear</option><option>Worn / repaired</option><option>Damaged / incomplete</option><option>Unknown</option></select></label>
+        <label class="field"><span>Papers / box / receipt?</span><select name="papers"><option value="">Choose...</option><option>Yes — original documents</option><option>Some documents / packaging</option><option>No</option><option>Unknown</option></select></label>
+        <label class="field field--wide"><span>Provenance or context</span><textarea name="provenance" rows="3" placeholder="Where it came from, approximate age, family history, purchase context, previous appraisal, service history, etc."></textarea></label>
+      </div></div>
+
+      <div class="wizard-step" data-step="4"><div class="wizard-head"><span>04 / EVIDENCE</span><h2>Prepare the right photographs.</h2><p>Selected photos are previewed locally. They are not uploaded or saved with the browser draft.</p></div><div class="photo-guidance"><div><b>01</b><span><strong>Whole item</strong><small>Neutral background, diffuse light, front and back.</small></span></div><div><b>02</b><span><strong>Marks</strong><small>Hallmarks, stamps, serials, signatures, clasps and case-back detail.</small></span></div><div><b>03</b><span><strong>Condition</strong><small>Damage, repairs, wear, missing parts, chips or stretching.</small></span></div><div><b>04</b><span><strong>Context</strong><small>Box, papers, receipts, tags and any matched pieces.</small></span></div></div><label class="upload-zone"><input type="file" accept="image/*" multiple data-photo-input><span class="upload-zone__icon">＋</span><strong>Select photos from this device</strong><small>Images stay in this page only and disappear when the page is closed or refreshed.</small></label><div class="photo-preview" data-photo-preview></div><div class="check-panel"><span>Evidence checklist</span><label><input type="checkbox" name="evidence" value="whole"> <i></i> Whole item photographed</label><label><input type="checkbox" name="evidence" value="marks"> <i></i> Hallmarks / serials photographed</label><label><input type="checkbox" name="evidence" value="condition"> <i></i> Damage / condition photographed</label><label><input type="checkbox" name="evidence" value="papers"> <i></i> Papers / packaging photographed if present</label></div></div>
+
+      <div class="wizard-step" data-step="5"><div class="wizard-head"><span>05 / ROUTE</span><h2>Your preparation route.</h2><p>This is a decision-support result, not an appraisal or offer.</p></div><div class="result-panel"><div class="result-panel__top"><span data-result-asset>ASSET</span><b data-result-level>PREPARATION</b></div><h3 data-result-title>Complete the previous steps to build your route.</h3><p data-result-intro></p><div class="result-priorities" data-result-priorities></div><div class="result-cautions" data-result-cautions></div></div><div class="result-disclaimer"><strong>What this does not do:</strong> authenticate the item, verify purity, determine market value, calculate a purchase offer, create a legal valuation, or replace specialist advice.</div></div>
+
+      <div class="wizard-step" data-step="6"><div class="wizard-head"><span>06 / BRIEF</span><h2>Keep the brief.</h2><p>Save a browser-local draft, print it, or copy the summary for your own records.</p></div><div class="brief-card" data-brief-card><div class="brief-card__head"><span>WAPAD PRE-ASSESSMENT BRIEF</span><strong data-case-ref>—</strong></div><div data-brief-content></div></div><div class="brief-actions"><button type="button" class="button button--ink" data-save-draft>Save browser draft</button><button type="button" class="button button--ghost-dark" data-copy-brief>Copy summary</button><button type="button" class="button button--ghost-dark" data-print-brief>Print / save PDF</button></div><p class="legal-note legal-note--dark">The current pilot tool does not transmit this brief to WAPAD. A secure intake channel will be connected only after the operating model, privacy controls and production contact channels are finalised.</p></div>
+
+      <div class="wizard-nav"><button class="wizard-back" type="button" data-prev disabled>← Back</button><div class="wizard-error" role="alert" data-error></div><button class="wizard-next" type="button" data-next>Continue <span>→</span></button></div>
+    </form></section>
+  </div></main>
+
+  <footer class="assessment-footer"><div class="shell"><span>WAPAD — WA Precious Asset Desk</span><div><a href="privacy.html">Privacy</a><a href="sources.html">Sources</a><a href="index.html">Main desk</a></div></div></footer>
+  <script src="assets/assessment.js" defer></script>
+</body>
+</html>
