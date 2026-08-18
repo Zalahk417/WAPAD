@@ -10,9 +10,18 @@
     "exclude": [
       ".git/**",
       ".github/**",
-      "wrangler.jsonc",
       "README.md",
-      "LAUNCH_CHECKLIST.md"
+      "LAUNCH_CHECKLIST.md",
+      "SOURCES_AND_LICENCES.csv",
+      "assessment-fragment.html",
+      "assets/site-00.css",
+      "assets/site-01.css",
+      "assets/site-02.css",
+      "assets/site-03.css",
+      "assets/site-04.css",
+      "assets/site-05.css",
+      "assets/site.js",
+      "assets/complete.js"
     ]
   }
 }
