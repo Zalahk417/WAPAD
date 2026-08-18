@@ -1,15 +1,24 @@
 {
   "name": "wapad",
+  "main": "./src/worker.js",
   "compatibility_date": "2026-08-18",
   "workers_dev": true,
   "preview_urls": true,
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "WAPAD_INDEXING_ENABLED": "false"
+  },
   "assets": {
     "directory": "./",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
     "exclude": [
       ".git/**",
       ".github/**",
+      "src/**",
       "README.md",
       "LAUNCH_CHECKLIST.md",
       "SOURCES_AND_LICENCES.csv",
