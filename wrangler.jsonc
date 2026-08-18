@@ -1,0 +1,16 @@
+{
+  "name": "wapad",
+  "compatibility_date": "2026-08-18",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    "exclude": [
+      ".git/**",
+      ".github/**",
+      "wrangler.jsonc",
+      "README.md",
+      "LAUNCH_CHECKLIST.md"
+    ]
+  }
+}
