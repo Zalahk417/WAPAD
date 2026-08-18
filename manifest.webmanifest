@@ -1,7 +1,7 @@
 {
-  "name": "WAPAD — WA Precious Asset Desk",
+  "name": "WAPAD — Precious Asset Decision Desk",
   "short_name": "WAPAD",
-  "description": "Evidence-led precious asset preparation and routing.",
+  "description": "Decision intelligence and route preparation for precious and collectable assets.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0b0b09",
