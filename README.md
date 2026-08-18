@@ -12,28 +12,43 @@ Production website and controlled-pilot application for **WAPAD**, founded in We
 
 Any push to `main` triggers a Cloudflare deployment.
 
-## WAPAD v3 strategy
+## Customer product ladder — v5
 
-WAPAD is no longer positioned as an uncredentialled buyer/valuer. The core product is **decision intelligence before transaction**: capture evidence, compare likely routes, keep uncertainty visible and escalate to the right credentialled specialist only when value-at-risk justifies it.
+WAPAD now has an explicit customer-facing commercial ladder:
 
-The commercial model is designed to be asset-light and portable:
+1. **Free Route Check — A$0 / available now**
+   - Browser-local first-pass evidence capture and routing.
+   - No authentication, valuation, purchase offer or custody.
+2. **Decision Brief — A$49 pilot price / paid pilot product**
+   - One asset.
+   - Human review of the Route Check, route research, useful comparable-market context, evidence gaps, confidence notes and a written next-step recommendation.
+   - Not a registered valuation or authentication certificate.
+3. **Estate Triage — A$249 pilot price / paid pilot product**
+   - Mixed collections, pilot scope up to 20 items.
+   - Priority map, preservation/grouping flags, evidence gaps and specialist triggers.
+   - Not a bundle of formal valuations.
+4. **External specialist escalation — provider fee**
+   - Registered valuer, gemmologist, watchmaker, laboratory, auction house or other specialist when the unanswered question requires physical or credentialled work.
+   - Third-party fees sit outside WAPAD's pilot pricing.
 
-- Free browser-local Route Check as the lead and qualification layer
-- Planned paid Decision Brief for market-route research, evidence gaps and next-step logic
-- Planned remote Estate Triage for mixed collections
-- Planned B2B Partner Desk for white-label intake and case qualification
-- Specialist/valuer/auction/buyer network used selectively rather than pretending WAPAD can personally authenticate every category
+Checkout remains disabled until secure intake, payment, privacy and delivery workflows are production-ready. The A$49 and A$249 prices are deliberately visible now so the product, positioning and economics can be tested before launch.
 
-The long-term moat is the workflow, case/outcome data, routing rules, specialist network and trust architecture — not inventory ownership or dependence on one AI model.
+## WAPAD strategy
+
+WAPAD is not positioned as an uncredentialled buyer/valuer. The core product is **decision intelligence before transaction**: capture evidence, compare likely routes, keep uncertainty visible and escalate to the right credentialled specialist only when value-at-risk justifies it.
+
+The commercial model is designed to be asset-light and portable. The long-term moat is the workflow, case/outcome data, routing rules, specialist network and trust architecture — not inventory ownership or dependence on one AI model.
 
 ## Product experience
 
-The current v3 front end includes:
+The customer front end includes:
 
-- Scroll-triggered reveals, staggered service cards, parallax elements and animated route flow
+- Persistent Route Check and Ask WAPAD actions
+- Scroll-triggered reveals, staggered cards, parallax elements and animated route flow
 - Interactive route examples for estates, watches, jewellery and bullion
-- Location-independent operating-model visualisation
-- Browser-local six-step Route Check with local photo previews
+- Free browser-local six-step Route Check with local photo previews
+- Paid-service recommendation after the completed Route Check
+- Dedicated Services & Pilot Pricing page
 - Local draft save/resume and printable/copyable evidence brief
 - Searchable Knowledge Desk
 - Offline-capable core pages
