@@ -1,6 +1,7 @@
 (() => {
   const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
   const form=$('#assessment-form'); if(!form) return;
+  if(!document.querySelector('link[href="assets/paid.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='assets/paid.css';document.head.appendChild(l)}
   const steps=$$('.wizard-step'), next=$('[data-next]'), prev=$('[data-prev]'), error=$('[data-error]');
   const progressLabel=$('[data-progress-label]'), progressBar=$('[data-progress-bar]');
   const STORAGE='wapad-preassessment-v2';
@@ -17,83 +18,21 @@
     unknown:{title:'Unknown is a useful category.',intro:'The goal is to convert unknowns into observable facts without forcing an early identity or value conclusion.',priorities:[['Describe only what you can see','Colour, dimensions, marks, construction, condition and context.'],['Photograph marks and joins','Small construction details often guide the next expert or test.'],['Keep the test plan reversible','Use non-destructive screening before escalation.']],cautions:[['Do not guess a material from colour','Appearance alone is weak evidence.'],['Preserve context','Packaging, grouping and provenance may matter more than expected.']]}
   };
 
-  function getData(){
-    const fd=new FormData(form), d={};
-    for(const [k,v] of fd.entries()){
-      if(k==='evidence'){(d.evidence??=[]).push(v)} else d[k]=v;
-    }
-    return d;
-  }
-  function setData(d){
-    if(!d) return;
-    Object.entries(d).forEach(([k,v])=>{
-      if(k==='evidence'&&Array.isArray(v)){v.forEach(val=>{const i=$(`input[name="evidence"][value="${CSS.escape(val)}"]`);if(i)i.checked=true});return}
-      const el=$(`[name="${CSS.escape(k)}"]`); if(!el) return;
-      if(el.type==='radio'){const r=$(`input[name="${CSS.escape(k)}"][value="${CSS.escape(v)}"]`);if(r)r.checked=true}
-      else el.value=v??'';
-    });
-  }
-  function requiredForStep(){
-    if(current===1 && !form.elements.asset.value) return 'Choose an asset category to continue.';
-    if(current===2 && !form.elements.objective.value) return 'Choose the decision you are trying to make.';
-    return '';
-  }
-  function showStep(n){
-    current=Math.min(6,Math.max(1,n));
-    steps.forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===current));
-    prev.disabled=current===1;
-    progressLabel.textContent=`Step ${current} of 6`;
-    progressBar.style.width=`${current/6*100}%`;
-    next.innerHTML=current===6?'Finish <span>✓</span>':'Continue <span>→</span>';
-    error.textContent='';
-    if(current===5) buildResult();
-    if(current===6) buildBrief();
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-  function makeRef(){
-    const d=new Date(), y=String(d.getFullYear()).slice(-2), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
-    const rand=Math.random().toString(36).slice(2,6).toUpperCase();
-    return `WAPAD-${y}${m}${day}-${rand}`;
-  }
-  function buildResult(){
-    const d=getData(), route=routeData[d.asset]||routeData.unknown;
-    $('[data-result-asset]').textContent=(assetNames[d.asset]||'ASSET').toUpperCase();
-    $('[data-result-level]').textContent=d.objective==='sell'?'ROUTE PREP':d.objective==='identify'?'IDENTIFICATION PREP':'EVIDENCE PREP';
-    $('[data-result-title]').textContent=route.title;
-    $('[data-result-intro]').textContent=route.intro;
-    $('[data-result-priorities]').innerHTML=route.priorities.map((x,i)=>`<div><b>0${i+1}</b><span><strong>${escapeHtml(x[0])}</strong><small>${escapeHtml(x[1])}</small></span></div>`).join('');
-    const contextual=[...route.cautions];
-    if(d.condition?.includes('Damaged')) contextual.push(['Preserve damaged components','Do not discard detached, broken or worn parts before identification.']);
-    if(d.papers?.startsWith('Yes')) contextual.push(['Keep documents paired','Original documentation should remain associated with the item and case reference.']);
-    $('[data-result-cautions]').innerHTML=contextual.map(x=>`<div><b>!</b><span><strong>${escapeHtml(x[0])}</strong><small>${escapeHtml(x[1])}</small></span></div>`).join('');
-  }
-  function buildBrief(){
-    const d=getData(); if(!caseRef) caseRef=makeRef(); $('[data-case-ref]').textContent=caseRef;
-    const evidence=(d.evidence||[]).length?d.evidence.join(', '):'Not recorded';
-    const sections=[['Asset',assetNames[d.asset]||'Not recorded'],['Objective',objectiveNames[d.objective]||'Not recorded'],['Description',d.description||'Not recorded'],['Marks / maker',`Hallmark: ${d.hallmark||'—'}\nMaker: ${d.maker||'—'}\nReference / serial: ${d.reference||'—'}`],['Material / weight',`Material: ${d.material||'—'}\nApprox. weight: ${d.weight||'—'}\nCondition: ${d.condition||'—'}`],['Documents / provenance',`Papers: ${d.papers||'—'}\n${d.provenance||'No provenance note recorded.'}`],['Evidence checklist',evidence]];
-    $('[data-brief-content]').innerHTML=sections.map(s=>`<div class="brief-card__section"><small>${escapeHtml(s[0])}</small><p>${escapeHtml(s[1])}</p></div>`).join('');
-  }
-  function briefText(){
-    const d=getData(); if(!caseRef) caseRef=makeRef();
-    return ['WAPAD PRE-ASSESSMENT BRIEF',caseRef,'',`Asset: ${assetNames[d.asset]||'Not recorded'}`,`Objective: ${objectiveNames[d.objective]||'Not recorded'}`,`Description: ${d.description||'Not recorded'}`,`Hallmark / stamp: ${d.hallmark||'—'}`,`Maker: ${d.maker||'—'}`,`Reference / serial: ${d.reference||'—'}`,`Material: ${d.material||'—'}`,`Approx. weight: ${d.weight||'—'}`,`Condition: ${d.condition||'—'}`,`Papers: ${d.papers||'—'}`,`Provenance: ${d.provenance||'—'}`,`Evidence checklist: ${(d.evidence||[]).join(', ')||'Not recorded'}`,'','This pre-assessment is an information and preparation record only. It is not an authentication, valuation, appraisal, offer or transaction record.'].join('\n');
-  }
+  function getData(){const fd=new FormData(form),d={};for(const [k,v] of fd.entries()){if(k==='evidence'){(d.evidence??=[]).push(v)}else d[k]=v}return d}
+  function setData(d){if(!d)return;Object.entries(d).forEach(([k,v])=>{if(k==='evidence'&&Array.isArray(v)){v.forEach(val=>{const i=$(`input[name="evidence"][value="${CSS.escape(val)}"]`);if(i)i.checked=true});return}const el=$(`[name="${CSS.escape(k)}"]`);if(!el)return;if(el.type==='radio'){const r=$(`input[name="${CSS.escape(k)}"][value="${CSS.escape(v)}"]`);if(r)r.checked=true}else el.value=v??''})}
+  function requiredForStep(){if(current===1&&!form.elements.asset.value)return'Choose an asset category to continue.';if(current===2&&!form.elements.objective.value)return'Choose the decision you are trying to make.';return''}
+  function showStep(n){current=Math.min(6,Math.max(1,n));steps.forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===current));prev.disabled=current===1;progressLabel.textContent=`Step ${current} of 6`;progressBar.style.width=`${current/6*100}%`;next.innerHTML=current===6?'Back to WAPAD <span>→</span>':'Continue <span>→</span>';error.textContent='';if(current===5)buildResult();if(current===6){buildBrief();buildPaidNextStep()}window.scrollTo({top:0,behavior:'smooth'})}
+  function makeRef(){const d=new Date(),y=String(d.getFullYear()).slice(-2),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0'),rand=Math.random().toString(36).slice(2,6).toUpperCase();return`WAPAD-${y}${m}${day}-${rand}`}
+  function buildResult(){const d=getData(),route=routeData[d.asset]||routeData.unknown;$('[data-result-asset]').textContent=(assetNames[d.asset]||'ASSET').toUpperCase();$('[data-result-level]').textContent=d.objective==='sell'?'ROUTE PREP':d.objective==='identify'?'IDENTIFICATION PREP':'EVIDENCE PREP';$('[data-result-title]').textContent=route.title;$('[data-result-intro]').textContent=route.intro;$('[data-result-priorities]').innerHTML=route.priorities.map((x,i)=>`<div><b>0${i+1}</b><span><strong>${escapeHtml(x[0])}</strong><small>${escapeHtml(x[1])}</small></span></div>`).join('');const contextual=[...route.cautions];if(d.condition?.includes('Damaged'))contextual.push(['Preserve damaged components','Do not discard detached, broken or worn parts before identification.']);if(d.papers?.startsWith('Yes'))contextual.push(['Keep documents paired','Original documentation should remain associated with the item and case reference.']);$('[data-result-cautions]').innerHTML=contextual.map(x=>`<div><b>!</b><span><strong>${escapeHtml(x[0])}</strong><small>${escapeHtml(x[1])}</small></span></div>`).join('')}
+  function buildBrief(){const d=getData();if(!caseRef)caseRef=makeRef();$('[data-case-ref]').textContent=caseRef;const evidence=(d.evidence||[]).length?d.evidence.join(', '):'Not recorded';const sections=[['Asset',assetNames[d.asset]||'Not recorded'],['Objective',objectiveNames[d.objective]||'Not recorded'],['Description',d.description||'Not recorded'],['Marks / maker',`Hallmark: ${d.hallmark||'—'}\nMaker: ${d.maker||'—'}\nReference / serial: ${d.reference||'—'}`],['Material / weight',`Material: ${d.material||'—'}\nApprox. weight: ${d.weight||'—'}\nCondition: ${d.condition||'—'}`],['Documents / provenance',`Papers: ${d.papers||'—'}\n${d.provenance||'No provenance note recorded.'}`],['Evidence checklist',evidence]];$('[data-brief-content]').innerHTML=sections.map(s=>`<div class="brief-card__section"><small>${escapeHtml(s[0])}</small><p>${escapeHtml(s[1])}</p></div>`).join('')}
+  function buildPaidNextStep(){const step=$('[data-step="6"]');if(!step)return;let box=step.querySelector('.paid-next-step');if(!box){box=document.createElement('section');box.className='paid-next-step';const actions=step.querySelector('.brief-actions');(actions?.parentNode||step).insertBefore(box,actions?actions.nextSibling:null)}const d=getData();if(d.asset==='estate'){box.innerHTML=`<div class="paid-next-step__meta"><span>OPTIONAL PAID NEXT STEP</span><b>A$249 PILOT</b></div><h3>Estate Triage</h3><p>If this is a mixed collection, the paid product is not “value every item”. It is to triage up to 20 items, preserve the important groupings and identify which pieces actually justify deeper work.</p><ul><li>Priority map across the collection</li><li>Flags for likely high-information pieces and matched sets</li><li>Which items need research, a specialist, or a simpler route</li></ul><div class="paid-next-step__actions"><a href="services.html#estate-triage">View A$249 Estate Triage <span>↗</span></a><a href="services.html#decision-brief">Or A$49 for one priority item</a></div><small class="paid-next-step__note">Pilot price shown for product testing. Payment and secure submission are not active yet.</small>`}else{box.innerHTML=`<div class="paid-next-step__meta"><span>OPTIONAL PAID NEXT STEP</span><b>A$49 PILOT</b></div><h3>Decision Brief</h3><p>Your free Route Check has organised the evidence. The paid layer is a human-reviewed brief for one asset: route research, comparable-market context where useful, confidence notes and a written next-step recommendation.</p><ul><li>Human review of this Route Check</li><li>Known / inferred / unknown kept separate</li><li>Market-route comparison + evidence gaps</li><li>Clear recommendation on what to do next</li></ul><div class="paid-next-step__actions"><a href="services.html#decision-brief">View A$49 Decision Brief <span>↗</span></a><a href="services.html">Compare all services</a></div><small class="paid-next-step__note">Pilot price shown for product testing. Payment and secure submission are not active yet.</small>`}}
+  function briefText(){const d=getData();if(!caseRef)caseRef=makeRef();return['WAPAD ROUTE CHECK',caseRef,'',`Asset: ${assetNames[d.asset]||'Not recorded'}`,`Objective: ${objectiveNames[d.objective]||'Not recorded'}`,`Description: ${d.description||'Not recorded'}`,`Hallmark / stamp: ${d.hallmark||'—'}`,`Maker: ${d.maker||'—'}`,`Reference / serial: ${d.reference||'—'}`,`Material: ${d.material||'—'}`,`Approx. weight: ${d.weight||'—'}`,`Condition: ${d.condition||'—'}`,`Papers: ${d.papers||'—'}`,`Provenance: ${d.provenance||'—'}`,`Evidence checklist: ${(d.evidence||[]).join(', ')||'Not recorded'}`,'','This Route Check is an information and preparation record only. It is not an authentication, valuation, appraisal, offer or transaction record.'].join('\n')}
   function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 
-  next.addEventListener('click',()=>{if(current===6){location.href='index.html';return}const msg=requiredForStep();if(msg){error.textContent=msg;return}showStep(current+1)});
-  prev.addEventListener('click',()=>showStep(current-1));
-
-  const photoInput=$('[data-photo-input]'), preview=$('[data-photo-preview]');
-  photoInput?.addEventListener('change',()=>{preview.innerHTML='';[...photoInput.files].slice(0,8).forEach(file=>{if(!file.type.startsWith('image/'))return;const url=URL.createObjectURL(file),fig=document.createElement('figure');fig.innerHTML='<img alt=""><figcaption></figcaption>';fig.querySelector('img').src=url;fig.querySelector('img').alt=`Local preview: ${file.name}`;fig.querySelector('figcaption').textContent=file.name;preview.appendChild(fig)})});
-
-  $('[data-save-draft]').addEventListener('click',()=>{if(!caseRef)caseRef=makeRef();localStorage.setItem(STORAGE,JSON.stringify({ref:caseRef,data:getData(),savedAt:new Date().toISOString()}));updateDraftBox();$('[data-save-draft]').textContent='Saved ✓';setTimeout(()=>$('[data-save-draft]').textContent='Save browser draft',1400)});
-  $('[data-copy-brief]').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(briefText());$('[data-copy-brief]').textContent='Copied ✓';setTimeout(()=>$('[data-copy-brief]').textContent='Copy summary',1400)}catch{error.textContent='Copy was blocked by this browser. Use Print / save PDF instead.'}});
-  $('[data-print-brief]').addEventListener('click',()=>window.print());
-
+  next.addEventListener('click',()=>{if(current===6){location.href='index.html#services';return}const msg=requiredForStep();if(msg){error.textContent=msg;return}showStep(current+1)});prev.addEventListener('click',()=>showStep(current-1));
+  const photoInput=$('[data-photo-input]'),preview=$('[data-photo-preview]');photoInput?.addEventListener('change',()=>{preview.innerHTML='';[...photoInput.files].slice(0,8).forEach(file=>{if(!file.type.startsWith('image/'))return;const url=URL.createObjectURL(file),fig=document.createElement('figure');fig.innerHTML='<img alt=""><figcaption></figcaption>';fig.querySelector('img').src=url;fig.querySelector('img').alt=`Local preview: ${file.name}`;fig.querySelector('figcaption').textContent=file.name;preview.appendChild(fig)})});
+  $('[data-save-draft]').addEventListener('click',()=>{if(!caseRef)caseRef=makeRef();localStorage.setItem(STORAGE,JSON.stringify({ref:caseRef,data:getData(),savedAt:new Date().toISOString()}));updateDraftBox();$('[data-save-draft]').textContent='Saved ✓';setTimeout(()=>$('[data-save-draft]').textContent='Save browser draft',1400)});$('[data-copy-brief]').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(briefText());$('[data-copy-brief]').textContent='Copied ✓';setTimeout(()=>$('[data-copy-brief]').textContent='Copy summary',1400)}catch{error.textContent='Copy was blocked by this browser. Use Print / save PDF instead.'}});$('[data-print-brief]').addEventListener('click',()=>window.print());
   function updateDraftBox(){const box=$('[data-draft-box]');try{const saved=JSON.parse(localStorage.getItem(STORAGE)||'null');if(saved?.data){box.hidden=false;$('[data-draft-ref]').textContent=saved.ref||'Saved draft';return saved}}catch{}box.hidden=true;return null}
-  $('[data-resume-draft]')?.addEventListener('click',()=>{const s=updateDraftBox();if(!s)return;setData(s.data);caseRef=s.ref||'';showStep(1)});
-  $('[data-delete-draft]')?.addEventListener('click',()=>{localStorage.removeItem(STORAGE);updateDraftBox()});
-
-  const params=new URLSearchParams(location.search), preset=params.get('asset');
-  if(preset&&assetNames[preset]){const radio=$(`input[name="asset"][value="${CSS.escape(preset)}"]`);if(radio)radio.checked=true}
-  updateDraftBox();showStep(1);
+  $('[data-resume-draft]')?.addEventListener('click',()=>{const s=updateDraftBox();if(!s)return;setData(s.data);caseRef=s.ref||'';showStep(1)});$('[data-delete-draft]')?.addEventListener('click',()=>{localStorage.removeItem(STORAGE);updateDraftBox()});
+  const params=new URLSearchParams(location.search),preset=params.get('asset');if(preset&&assetNames[preset]){const radio=$(`input[name="asset"][value="${CSS.escape(preset)}"]`);if(radio)radio.checked=true}updateDraftBox();showStep(1);
 })();
