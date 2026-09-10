@@ -1,0 +1,25 @@
+version: 1.0.0
+inspection_modes:
+  - compliance
+  - skill_health
+  - outcome_quality
+  - regression
+  - red_team
+dimensions:
+  instruction_validity: 15
+  tool_connectivity: 15
+  source_availability: 15
+  policy_compliance: 20
+  test_success: 15
+  recent_execution_success: 10
+  outcome_quality: 10
+thresholds:
+  GREEN: 85
+  AMBER: 70
+  RED: 0
+black_override: true
+rules:
+  - inspector_general_must_not_report_to_operating_agents
+  - operating_agents_may_not_self_certify_material_work
+  - failed_controls_must_be_disclosed
+  - evidence_precedes_completion_claim
