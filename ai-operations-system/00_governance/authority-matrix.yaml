@@ -1,0 +1,16 @@
+version: 1.0.0
+levels:
+  AUTONOMOUS:
+    rule: execute_and_log
+  AUTO-WITH-LIMITS:
+    rule: execute_only_within_explicit_thresholds
+  OWNER_APPROVAL:
+    rule: stop_before_consequential_action
+  PROHIBITED:
+    rule: never_execute
+default_if_unspecified: OWNER_APPROVAL
+precedence:
+  - PROHIBITED
+  - OWNER_APPROVAL
+  - AUTO-WITH-LIMITS
+  - AUTONOMOUS
