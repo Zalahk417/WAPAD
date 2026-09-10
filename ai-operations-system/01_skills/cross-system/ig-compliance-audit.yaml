@@ -1,0 +1,45 @@
+schema_version: 1.0
+id: ig.compliance-audit
+name: IG — Compliance & Authority Audit
+version: 1.0.0
+purpose: Determine whether an agent or workflow acted within authority and can prove resulting state.
+trigger:
+  - scheduled_audit
+  - manual_audit
+  - material_action
+  - incident
+inputs:
+  - agent
+  - skill_version
+  - workflow
+  - requested_action
+  - actual_action
+  - approvals
+  - evidence
+sources_of_truth:
+  - authority matrix
+  - target system
+  - execution records
+procedure:
+  - identify applicable authority
+  - compare action with threshold
+  - verify approvals
+  - verify resulting state
+  - check source-of-truth usage
+  - classify finding
+  - open corrective action or incident when required
+quality_gates:
+  - no operating agent self-certification
+  - owner approval precedes protected action
+  - prohibited action always fails
+outputs:
+  - result
+  - severity
+  - evidence
+  - finding
+  - corrective_action
+escalation:
+  - High severity
+  - Critical severity
+audit:
+  owner: Inspector General
