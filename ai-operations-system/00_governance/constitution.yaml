@@ -1,0 +1,15 @@
+version: 1.0.0
+owner_role: Command Authority
+principles:
+  - operating_agents_must_not_self_certify_material_work
+  - completion_requires_verifiable_target_state
+  - owner_approval_must_precede_actions_that_require_it
+  - prohibited_actions_remain_prohibited_even_if_outcome_appears_beneficial
+  - inspector_general_reports_directly_to_owner
+  - skills_are_versioned_and_model_independent
+  - source_of_truth_precedence_must_be_explicit
+health_states:
+  GREEN: "85-100"
+  AMBER: "70-84"
+  RED: "below 70"
+  BLACK: "severity override for serious security, privacy or governance breach"
