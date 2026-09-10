@@ -1,0 +1,47 @@
+schema_version: 1.0
+id: ig.skill-health
+name: IG — Skill Health Check
+version: 1.0.0
+purpose: Assess whether a registered AI skill remains safe, usable, current and effective.
+trigger:
+  - scheduled_audit
+  - manual_audit
+  - material_skill_change
+  - failure_signal
+inputs:
+  - skill_spec
+  - tool_state
+  - source_state
+  - recent_execution_evidence
+  - authority_rules
+sources_of_truth:
+  - governance constitution
+  - skills registry
+  - target systems
+procedure:
+  - validate required fields
+  - verify tools and connectors
+  - verify sources of truth
+  - check authority thresholds
+  - run or simulate regression tests
+  - review execution evidence
+  - score health dimensions
+  - assign GREEN AMBER RED or BLACK
+  - record findings and corrective actions
+  - suspend autonomy only when explicitly authorised
+quality_gates:
+  - direct evidence preferred
+  - no self-certification
+  - all failed controls disclosed
+outputs:
+  - health_score
+  - state
+  - findings
+  - corrective_actions
+  - autonomy_status
+escalation:
+  - BLACK state
+  - unclear authority
+  - security or privacy breach
+audit:
+  owner: Inspector General
