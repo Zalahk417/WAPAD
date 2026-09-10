@@ -1,0 +1,24 @@
+schema_version: 1.0
+required:
+  - id
+  - name
+  - version
+  - purpose
+  - trigger
+  - inputs
+  - sources_of_truth
+  - procedure
+  - quality_gates
+  - outputs
+  - escalation
+recommended:
+  - authority
+  - tests
+  - audit
+rules:
+  id: globally_unique_stable_identifier
+  version: semantic_versioning
+  sources_of_truth: ordered_when_precedence_matters
+  authority: explicit_for_consequential_actions
+  quality_gates: objectively_testable_where_possible
+  outputs: evidence_must_be_recordable
