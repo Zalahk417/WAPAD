@@ -1,0 +1,12 @@
+version: 1.0.0
+acceptable_evidence:
+  - target_system_state
+  - connector_output
+  - file_or_document_state
+  - repository_commit
+  - execution_log
+  - transaction_or_message_id
+unacceptable_as_sole_evidence:
+  - agent_narration
+  - unverified_claim_of_completion
+rule: "Done is a conclusion, not evidence."
